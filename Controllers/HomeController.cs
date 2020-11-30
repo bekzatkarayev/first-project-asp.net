@@ -14,12 +14,9 @@ namespace FirstProject.Controllers
     {
         public ViewResult Index()
         {
-            return View("MyView");
-        }
-
-        public ViewResult Privacy()
-        {
-            return View("Privacy");
+            int hour = DateTime.Now.Hour;
+            string viewModel = hour < 12 ? "Good Morning" : "Good afternoon";
+            return View("MyView", viewModel);
         }
     }
 }
